@@ -6,9 +6,11 @@ import crypto from 'crypto';
 
 export const routesLogin = Router()
     .post('/:username', async (req, res) => {
-        const username = req.body.username;
+        const username = req.body.login;
         const password = req.body.password;
+
         const dto: any = await pool.execute("SELECT `login`, `password` from `user2` WHERE `login` = :username", {username});
+        console.log(username)
 
         if (!dto[0].length) {
             res.status(401).send('Cannot find user');
