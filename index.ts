@@ -3,6 +3,7 @@ import cors from 'cors';
 import rateLimit from "express-rate-limit";
 import {routesUsers} from "./routes/users/routes.users";
 import {routesLogin} from "./routes/login/routes.login";
+import {routesRegister} from "./routes/register/routes.register";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(rateLimit({
 
 app.use('/users', routesUsers)
 app.use('/login', routesLogin)
+app.use('/register', routesRegister)
 
 app.listen(3001, '0.0.0.0', () => {
     console.log('Listening http://localhost:3001');
