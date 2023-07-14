@@ -14,6 +14,7 @@ export const routesRegister = Router()
                 return
             }
             await pool.execute("INSERT INTO `user2` (`login`, `password`, `email`) VALUES (:login, :password, :email)", data)
+            res.sendStatus(201);
         } catch (e) {
             res.sendStatus(500)
         }

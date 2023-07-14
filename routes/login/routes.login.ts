@@ -28,7 +28,7 @@ export const routesLogin = Router()
 
 
         if (hash === user.password) {
-            const token = jwt.sign({id: user.id, login: user.login, password: user.password}, process.env.ACCESS_TOKEN, {expiresIn: '15s'})
+            const token = jwt.sign({id: user.id, login: user.login, password: user.password}, process.env.ACCESS_TOKEN, {expiresIn: '15m'})
             const refreshToken = jwt.sign({id: user.id, login: user.login, password: user.password}, process.env.REFRESH_ACCESS_TOKEN)
             const refreshUser = {id: user.id, token: refreshToken};
             await pool.execute("INSERT INTO `refresh_token` (`id_user`, `token`) VALUES (:id, :token)", refreshUser);

@@ -5,6 +5,7 @@ import {routesUsers} from "./routes/users/routes.users";
 import {routesLogin} from "./routes/login/routes.login";
 import {routesRegister} from "./routes/register/routes.register";
 import {routesLogout} from "./routes/logout/routes.logout";
+import {routesRuch} from "./routes/matches/routes.ruch";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use('/users', routesUsers)
 app.use('/login', routesLogin)
 app.use('/register', routesRegister)
 app.use('/logout', routesLogout)
+app.use('/matches', routesRuch)
 
 app.listen(3001, '0.0.0.0', () => {
     console.log('Listening http://localhost:3001');
