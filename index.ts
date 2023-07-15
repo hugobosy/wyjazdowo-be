@@ -27,3 +27,5 @@ app.use('/matches', routesRuch)
 app.listen(3001, '0.0.0.0', () => {
     console.log('Listening http://localhost:3001');
 })
+
+export default app;
